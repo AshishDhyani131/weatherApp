@@ -1,0 +1,352 @@
+:root {
+  --def-transition-duration: 0.2s;
+
+  --color-cloudy: #5f7c9c;
+  --color-cloudy-shade: #56708c;
+
+  --color-sunny: #3f7abc;
+  --color-sunny-shade: #396ea9;
+
+  --color-rainy: #26323e;
+  --color-rainy-shade: #222d38;
+
+  --color-thunderstorms: #101c29;
+  --color-thunderstorms-shade: #0e1925;
+
+  --color-snowy: #c6e2ff;
+  --color-snowy-shade: #b2cbe6;
+
+  --color-foggy: #a0b6d9;
+  --color-foggy-shade: #90a4c3;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 120%;
+}
+
+img {
+  display: block;
+}
+body {
+  overflow-x: hidden;
+}
+
+#hero {
+  background: linear-gradient(to bottom, #151618 64%, white 36%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#hero ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 5rem;
+}
+
+#main-header ul {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+#main-header a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.8125rem;
+}
+
+#page-title {
+  width: 80%;
+  margin: 0 auto;
+  color: #eceff1;
+  text-align: center;
+}
+
+#page-title p {
+  font-size: 1.5625rem;
+  font-weight: 200;
+}
+
+#page-title h1 {
+  font-size: 3.0625rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+#hero .accordion {
+  width: 100%;
+  /* margin: 0 4rem; */
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 1rem;
+  justify-content: center;
+}
+.form {
+  margin-top: 2rem;
+  /* width: 50%; */
+}
+.form input {
+  width: 30%;
+  padding: 8px;
+  border-radius: 50px;
+  background: #5b5c5d;
+  color: white;
+  /* font-size: 18px; */
+}
+.form input:focus {
+  outline: none;
+}
+.accordion--item p {
+  margin: 0;
+}
+
+.cloudy {
+  background: var(--color-cloudy) url(./assets/weatherIcons/cloud.svg);
+}
+
+.cloudy .readings li {
+  background-color: var(--color-cloudy-shade);
+}
+
+.sunny {
+  background: var(--color-sunny) url(./assets//weatherIcons/sun.svg);
+}
+
+.sunny .readings li {
+  background-color: var(--color-sunny-shade);
+}
+.foggy {
+  background: var(--color-foggy) url(./assets/weatherIcons/smog.svg);
+}
+.foggy .readings li {
+  background-color: var(--color-foggy-shade);
+}
+.snowy {
+  background: var(--color-snowy) url(./assets/weatherIcons/snowflake.svg);
+}
+.snowy .readings li {
+  background-color: var(--color-snowy-shade);
+}
+.rainy {
+  background: var(--color-rainy)
+    url(./assets/weatherIcons/cloud-showers-heavy.svg);
+}
+
+.rainy .readings li {
+  background-color: var(--color-rainy-shade);
+}
+
+.thunderstorms {
+  background: var(--color-thunderstorms)
+    url(./assets//weatherIcons/cloud-bolt.svg);
+}
+
+.thunderstorms .readings li {
+  background-color: var(--color-thunderstorms-shade);
+}
+
+.accordion--item {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 25rem;
+  flex: 0 0 10rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.accordion--item:hover {
+  background-size: 25rem;
+}
+
+.date li:nth-child(1) {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.date li:nth-child(2) {
+  font-size: 0.8125rem;
+}
+
+.temp {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  opacity: 0;
+}
+
+.temp p {
+  font-size: 2.1875rem;
+  font-weight: 200;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.temp--values {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.temp--values li:nth-child(2) {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.temp .temp--values li:nth-child(1) {
+  font-size: 2.1875rem;
+}
+
+.temp .temp--values li:nth-child(2) {
+  font-size: 1.5625rem;
+}
+
+.readings {
+  display: flex;
+  gap: 1rem;
+  width: 28rem;
+  opacity: 0;
+}
+
+.readings li {
+  border-radius: 0.75rem;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.readings li p:nth-of-type(1) {
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.readings li p:nth-of-type(2) {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.bottom-temp {
+  position: absolute;
+  bottom: 2rem;
+}
+
+.opened {
+  background-size: 20rem;
+  flex-basis: 32rem;
+  cursor: auto;
+}
+
+.opened .date li:nth-child(2) {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.opened .temp,
+.opened .readings {
+  opacity: 1;
+}
+
+.opened .bottom-temp {
+  opacity: 0;
+}
+
+.accordion--item:hover:not(.opened) .bottom-temp {
+  transform: translate3d(0, -1rem, 0);
+}
+.accordion--item:hover:not(.opened) .date {
+  transform: translate3d(0, 1rem, 0);
+}
+.date {
+  transition-property: transform;
+}
+.bottom-temp {
+  transition-property: transform;
+}
+.accordion--item {
+  transition-property: flex-basis, background-size, padding;
+}
+.opened .bottom-temp {
+  transform: translate3d(0, 2rem, 0);
+}
+.temp,
+.readings {
+  transition: opacity, transform;
+}
+
+.temp {
+  transform: translate3d(0, -4rem, 0);
+}
+.opened .temp,
+.opened .readings {
+  transform: translate3d(0, 0, 0);
+}
+.date li:nth-child(2) {
+  transition-property: color;
+}
+.accordion--item,
+.bottom-temp,
+.date,
+.temp,
+.readings,
+.date li:nth-child(2) {
+  transition-duration: var(--def-transition-duration);
+  transition-timing-function: ease-in-out;
+}
+@media screen and (max-width: 1346px) {
+  .accordion {
+    width: 80%;
+  }
+  .accordion--item {
+    flex-basis: 50%;
+    flex-wrap: wrap;
+    background-size: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  #hero .opened .readings {
+    margin: 0 auto;
+  }
+  .form input {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 426px) {
+  #hero .readings {
+    width: 25rem;
+  }
+  .readings li {
+    padding: 0.5rem 1rem;
+    font-size: 5rem;
+    margin: 0;
+  }
+  .form input {
+    width: 70%;
+  }
+  .accordion--item {
+    flex-basis: 70%;
+  }
+}
